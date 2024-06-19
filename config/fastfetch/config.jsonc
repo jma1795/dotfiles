@@ -1,0 +1,158 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+      "source": "~/.config/fastfetch/nixos.png",
+      "type": "kitty-direct",
+      "height": 15,
+      "width": 30,
+      "padding": {
+          "top": 3,
+          "left": 3
+      }
+  },
+  "modules": [
+      "break",
+      {
+          "type": "custom",
+          "format": "\u001b[35m┌──────────────────────Hardware──────────────────────┐"
+      },
+      {
+          "type": "title",
+          "key": "Hostname",
+           "keyColor": "35",
+            "format": "{1}@{2}"
+      },
+
+        {
+          "type": "bios",
+          "key": " ├Bios",
+          "keyColor": "35"
+      },
+
+        {
+          "type": "cpu",
+          "key": " ├CPU",
+          "keyColor": "35"
+      },
+      {
+          "type": "gpu",
+          "key": " ├GPU",
+          "keyColor": "35"
+      },
+      {
+          "type": "memory",
+          "key": " ├RAM",
+          "keyColor": "35"
+      },
+      {
+          "type": "disk",
+          "key": " └Storage",
+          "keyColor": "35",
+      },
+
+      {
+          "type": "custom",
+          "format": "\u001b[35m└────────────────────────────────────────────────────┘"
+      },
+      "break",
+      {
+          "type": "custom",
+          "format": "\u001b[32m┌──────────────────────Software──────────────────────┐"
+      },
+      {
+          "type": "os",
+            "key": "Distro",
+            "keyColor": "32",  // = color1
+      },
+      {
+          "type": "kernel",
+          "key": " ├Kernel",
+          "keyColor": "32"
+      },
+      {
+          "type": "packages",
+          "key": " ├Packages",
+          "keyColor": "32"
+      },
+      {
+          "type": "shell",
+          "key": " ├Shell",
+          "keyColor": "32"
+      },
+
+      {
+          "type": "wm",
+          "key": " ├WM",
+          "keyColor": "32"
+      },
+ 
+      {
+          "type": "DE",
+          "key": " ├DE",
+          "keyColor": "32"
+      },
+      {
+          "type": "wmtheme",
+          "key": " ├Theme",
+          "keyColor": "32"
+      },
+      {
+          "type": "icons",
+          "key": " ├Icons",
+          "keyColor": "32",
+      },
+      {
+          "type": "cursor",
+          "key": " ├Cursor",
+          "keyColor": "32", 
+      },
+      {
+          "type": "terminal",
+          "key": " └Terminal",
+          "keyColor": "32"
+      },
+      {
+          "type": "custom",
+          "format": "\u001b[32m└────────────────────────────────────────────────────┘"
+      },
+      "break",
+      {
+          "type": "custom",
+          "format": "\u001b[33m┌────────────────────Uptime / Age────────────────────┐"
+      },
+
+      {
+          "type": "uptime",
+          "key": "Uptime",
+          "keyColor": "33"
+      },
+
+      {
+          "type": "command",
+          "key": " ├Install Date",
+          "keyColor": "33",
+          "text": "birth_install=$(stat / | awk '/Birth: /{print $2}'); echo $birth_install"
+      },
+
+
+      {
+          "type": "datetime",
+          "key": " ├Current Date",
+          "keyColor": "33",
+          "format": "{1}-{3}-{11}"
+          
+      },
+
+      {
+          "type": "command",
+          "key": " └Install Age",
+          "keyColor": "33",
+          "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+      },
+      {
+          "type": "custom",
+          "format": "\u001b[33m└────────────────────────────────────────────────────┘"
+      },
+      "break"
+  ]
+}
