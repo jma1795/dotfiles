@@ -6,6 +6,7 @@ sudo nala update
 
 # Multimedia CODECs
 sudo nala install mint-meta-codecs -y
+sudo nala install ubuntu-restricted-extras -y
 
 # Install Native System Packages
 sudo nala install git nfs-common gparted xsensors cheese btop micro flameshot -y
