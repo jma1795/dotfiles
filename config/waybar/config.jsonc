@@ -1,0 +1,70 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 40,
+
+    "modules-left": ["custom/menu","sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/weather","tray","pulseaudio","battery", "clock", "custom/power"],
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "format": "{index}{name}",
+        "disable-scroll": true
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "custom/weather": {
+      "format": "{}",
+      "tooltip": true,
+      "interval": 3600,
+      "exec": "waybar-wttr.py",
+      "return-type": "json"
+
+},
+    "clock": {
+        "format": "{:%m/%d/%y %I:%M %p}",
+       	 "tooltip": false
+    },
+    "battery": {
+        "format": " {capacity}% {icon} ",
+        "format-alt": " {time} {icon} ",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% {icon} ",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-alt": "{volume} {icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "",
+        "format-icons": {
+            "phone": [" ", " ", " ", " "],
+            "default": ["", "", "", ""]
+        },
+        "scroll-step": 10,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+"custom/power": {
+		"format": "  ",
+		"on-click": "bash ~/.config/waybar/modules/power.sh",
+},
+
+"custom/menu":{
+	"format": "",
+	"onclick": "exec drun"
+
+},
+    "tray": {
+        "icon-size": 20
+    }
+}

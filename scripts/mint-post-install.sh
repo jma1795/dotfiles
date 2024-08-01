@@ -8,16 +8,17 @@ sudo nala update
 sudo nala install mint-meta-codecs -y
 
 # Install Native System Packages
-sudo nala install git nfs-common gparted xsensors cheese btop micro -y
+sudo nala install git nfs-common gparted xsensors cheese btop micro flameshot -y
 
 # Install non-repo packages
 
-# Great Purge
+# Remove Packages I don't use
+sudo nala remove -y transmission-gtk hypnotix
 
-# Upgrade Packages
+# Upgrade What's left
 sudo nala upgrade -y
 
-# Autoremove
+# Autoremove Junk
 sudo nala autoremove -y
 
 # Install flatpaks
